@@ -1,0 +1,39 @@
+name: Build & Deploy
+
+on: 
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build-publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+
+      - name: Setup NodeJS 14
+        uses: actions/setup-node@v1
+        with: 
+          node-version: 14
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Makebuild
+        run: npm run-script build
+
+      - name: Publish to registry
+        run: npm publish
+        env: 
+          NODE_AUTH_TOKEN: ${{ secretes.GITHUB_TOKEN }}
