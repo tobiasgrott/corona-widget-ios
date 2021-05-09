@@ -1,4 +1,4 @@
-name: Build & Deploy
+name: PUblish Package
 
 on: 
   push:
@@ -36,4 +36,4 @@ jobs:
       - name: Publish to registry
         run: npm publish
         env: 
-          NODE_AUTH_TOKEN: ${{ secretes.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
