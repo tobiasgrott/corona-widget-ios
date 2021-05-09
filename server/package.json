@@ -1,7 +1,7 @@
 {
   "author": "Marcel Rebmann (https://github.com/marcelrebmann)",
   "repository": {
-    "url": "git+https://github.com/marcelrebmann/corona-widget-ios.git",
+    "url": "git+https://github.com/tobiasgrott/corona-widget-ios.git",
     "type": "git"
   },
   "version": "1.2.1",
@@ -35,9 +35,9 @@
   },
   "name": "@tobiasgrott/corona-widget-ios",
   "bugs": {
-    "url": "https://github.com/marcelrebmann/corona-widget-ios/issues"
+    "url": "https://github.com/tobiasgrott/corona-widget-ios/issues"
   },
-  "homepage": "https://github.com/marcelrebmann/corona-widget-ios#readme",
+  "homepage": "https://github.com/tobiasgrott/corona-widget-ios#readme",
   "main": "index.js",
   "license": "ISC",
   "description": ""
